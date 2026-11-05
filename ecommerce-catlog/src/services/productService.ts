@@ -10,7 +10,7 @@ export async function fetchAPI<T>(url:string): Promise<T> {
     return response.json() as Promise<T>;
 }
 
-export const ProductService = {
+export const productService = {
     getProducts: () => fetchAPI<Product[]>(`${BASE_URL}/products`),
     getProductById: (id: number) => fetchAPI<Product>(`${BASE_URL}/products/${id}`),
     getCategories: () => fetchAPI<string[]>(`${BASE_URL}/products/categories`),
