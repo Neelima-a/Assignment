@@ -7,17 +7,19 @@ import { groupProductsByCategory } from '../utils/productUtils';
 import SearchBar from '../components/SearchBar.vue';
 import CategorySection from '../components/CategorySection.vue';
 
+import { useDebounce } from '../composables/useDebounce';
+
 const productStore = useProductStore();
 
 const searchQuery = ref('');
-
+const debouncedSearch = useDebounce(searchQuery, 300);
 onMounted(() => {
   productStore.fetchProducts();
 });
 
 // Search products by title
 const filteredProducts = computed(() => {
-  const query = searchQuery.value.trim().toLowerCase();
+  const query = debouncedSearch.value.trim().toLowerCase();
 
   if (!query) {
     return productStore.products;
