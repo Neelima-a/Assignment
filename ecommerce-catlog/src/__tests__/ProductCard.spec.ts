@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from 'vue-router';
-
-import ProductCard from '../components/ProductCard.vue';
 
 import type { Product } from '../types/product';
+
+import ProductCard from '../components/ProductCard.vue'
+import { createRouter, createMemoryHistory } from 'vue-router'
 
 const testProduct: Product = {
   id: 1,
