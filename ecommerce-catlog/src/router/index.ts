@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import ProductDashboard from '../views/ProductDashboard.vue';
-import ProductDetails from '../views/ProductDetails.vue';
-import NotFound from '../views/NotFound.vue';
 const routes = [
     {
       path: '/',
