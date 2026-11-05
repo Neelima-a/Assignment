@@ -47,7 +47,9 @@ npm run dev
 ### Run Tests
 
 ```bash
-npm run test:run
+npm run test:unit
+npm run test:unit -- --run
+npm run test:unit -- --run 'filepath'
 ```
 
 ### Production Build
