@@ -12,7 +12,7 @@ export async function fetchAPI<T>(url:string): Promise<T> {
 
 export const productService = {
     getProducts: () => fetchAPI<Product[]>(`${BASE_URL}/products`),
-    getProductById: (id: number) => fetchAPI<Product>(`${BASE_URL}/products/${id}`),
+    getProductById: (id: number) => fetchAPI<Product[]>(`${BASE_URL}/products/${id}`),
     getCategories: () => fetchAPI<string[]>(`${BASE_URL}/products/categories`),
     getRatings: () => fetchAPI<ProductRating[]>(`${BASE_URL}/ratings`)
 };
